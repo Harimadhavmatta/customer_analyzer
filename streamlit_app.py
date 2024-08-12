@@ -41,4 +41,4 @@ with st.expander("**Top Item List**"):
     st.write(grouped)
 st.subheader('Data Visualization')
 
-st.bar_chart(df, x="gender", y="item_category", color="site", horizontal=True)
+st.bar_chart(grouped)
