@@ -8,7 +8,7 @@ st.write(df.head())
 st.subheader('Basic Description Of Data')
 with st.expander("**Info**"): 
   st.write(" This info tells you about datasets schema ")
-  st.write(df.info())
+  st.write(str(df.info()))
 with st.expander("**Describe**"):
   st.write(" This Describe display's the aggregates of each numeric column ")
   st.write(df.describe())
