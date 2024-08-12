@@ -15,7 +15,7 @@ with st.expander("**Top Customer List**"):
   st.write("Who many top customers you want to see ? ")
   x=st.text_input('eg:- 10,20,5...')
   y=int(x)
-  if x s not None:
+  if x is not None:
     
     s=df.sort_values("bill_amount", ascending=False)
     st.write(s.head(y))
