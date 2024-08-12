@@ -6,7 +6,7 @@ df=pd.read_csv('bakery_customer_data.csv')
 st.subheader("Sample Dataset")
 st.write(df.head())
 st.subheader('Basic Description Of Data')
-with st.expander("**Info**"):
+with st.expander("**Info**"): 
   st.write(" This info tells you about datasets schema ")
   st.write(df.info())
 with st.expander("**Describe**"):
