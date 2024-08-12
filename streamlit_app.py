@@ -35,5 +35,6 @@ with st.expander("**Top Customer List**"):
 st.subheader("Want to know which item performed well?")
 with st.expander("**Top Item List**"):
     st.write("Here are the sales of each item in order:")
-    target=df['bill_amount']
-    st.write(target)
+    target=['bill_amount']
+    grouped=df.groupby['item_category']['bill_amount'].mean()
+    st.write(grouped)
