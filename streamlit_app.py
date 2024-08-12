@@ -6,9 +6,9 @@ df=pd.read_csv('bakery_customer_data.csv')
 st.subheader("Sample Dataset")
 st.write(df.head())
 st.subheader('Basic Description Of Data')
-with st.extender("**Info**"):
+with st.expander("**Info**"):
   st.write(" This info tells you about datasets schema ")
   st.write(df.info())
-with st.extender("**Describe**"):
+with st.expander("**Describe**"):
   st.write(" This Describe display's the aggregates of each numeric column ")
   st.write(df.info())
