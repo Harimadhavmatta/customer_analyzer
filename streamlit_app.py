@@ -35,6 +35,10 @@ with st.expander("**Top Customer List**"):
 st.subheader("Want to know which item performed well?")
 with st.expander("**Top Item List**"):
     st.write("Here are the sales of each item in order:")
-    grouped_items = df.groupby(['item_category']).mean()
+
+    # Selecting only numeric columns for the mean calculation
+    numeric_columns = df.select_dtypes(include=['number'])
+    grouped_items = df.groupby(['item_category'])[numeric_columns.columns].mean()
+    
     sorted_items = grouped_items.sort_values(["bill_amount"], ascending=False)
     st.write(sorted_items)
