@@ -37,4 +37,5 @@ with st.expander("**Top Item List**"):
     st.write("Here are the sales of each item in order:")
     target=['bill_amount']
     grouped=df.groupby(['item_category'])['bill_amount'].mean()
-    st.write(grouped.sort_values('bill_amount', ascending=False))
+    grouped=grouped.sort_values('bill_amount', ascending=False)
+    st.write(grouped)
