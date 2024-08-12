@@ -1,30 +1,40 @@
 import streamlit as st
 import pandas as pd
-st.title(' 🎂 Bakery Customer Analysis')
-st.info(" Analyzer tells you what happened this year in the bakery ")
-df=pd.read_csv('bakery_customer_data.csv')
+
+# Title and Info
+st.title('🎂 Bakery Customer Analysis')
+st.info("Analyzer tells you what happened this year in the bakery")
+
+# Load dataset
+df = pd.read_csv('bakery_customer_data.csv')
+
+# Display Sample Dataset
 st.subheader("Sample Dataset")
 st.write(df.head())
+
+# Basic Description of Data
 st.subheader('Basic Description Of Data')
 with st.expander("**Describe**"):
-  st.write(" This Describe display's the aggregates of each numeric column ")
-  st.write(df.describe())
+    st.write("This Describe display's the aggregates of each numeric column")
+    st.write(df.describe())
 
-st.subheader("Want to know you top customers ? ")
+# Top Customers Section
+st.subheader("Want to know your top customers?")
 with st.expander("**Top Customer List**"):
-  st.write("Who many top customers you want to see ? ")
-  x=st.text_input('eg:- 10,20,5...')
-  y=int(x)
-  if x is not None:
+    st.write("How many top customers do you want to see?")
+    user_input = st.text_input('Enter a number, e.g., 10, 20, 5...')
     
-    s=df.sort_values("bill_amount", ascending=False)
-    st.write(s.head(y))
-  else:
-    st.write("enter the number")
-  
-st.subheader("Want to know which item performed well ? ")
+    if user_input.isdigit():
+        num_customers = int(user_input)
+        sorted_customers = df.sort_values("bill_amount", ascending=False)
+        st.write(sorted_customers.head(num_customers))
+    else:
+        st.write("Please enter a valid number.")
+
+# Top Performing Items Section
+st.subheader("Want to know which item performed well?")
 with st.expander("**Top Item List**"):
-  st.write(" Here are the sales of each item in order ")
-  grouped=df.groupby(['item_category']).mean()
-  sorted=grouped.sort_values(["bill_amount"],ascending=False)
-  st.write(sorted)
+    st.write("Here are the sales of each item in order:")
+    grouped_items = df.groupby(['item_category']).mean()
+    sorted_items = grouped_items.sort_values(["bill_amount"], ascending=False)
+    st.write(sorted_items)
