@@ -39,6 +39,6 @@ with st.expander("**Top Item List**"):
     # Selecting only numeric columns for the mean calculation
     numeric_columns = df.select_dtypes(include=['number'])
     grouped_items = df.groupby(['item_category'])[numeric_columns.columns].mean()
-    
+    grouped_item=grouped_item['bill_amount']
     sorted_items = grouped_items.sort_values(["bill_amount"], ascending=False)
     st.write(sorted_items)
