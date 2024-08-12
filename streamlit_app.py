@@ -10,10 +10,8 @@ with st.expander("**Describe**"):
   st.write(" This Describe display's the aggregates of each numeric column ")
   st.write(df.describe())
 
-st.subheader("want to know you top customers ? ")
-st.write("who many customers you want to see ? ")
-x=st.text_input('eg:- 10,20,5...')
-if x is not None:
-  st.write(df.sort_values("bill_amount", ascending=False).head(x))
-else:
-  str.write(" enter ")
+st.subheader("Want to know you top customers ? ")
+with st.expander("**Top List**"):
+  st.write("Who many top customers you want to see ? ")
+  x=st.text_input('eg:- 10,20,5...')
+  st.write(x)
