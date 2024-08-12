@@ -40,5 +40,7 @@ with st.expander("**Top Item List**"):
     grouped=grouped.sort_values( ascending=False)
     st.write(grouped)
 st.subheader('Data Visualization')
-
+st.write(" Compare item sales ")
 st.bar_chart(grouped)
+
+
