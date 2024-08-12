@@ -14,4 +14,4 @@ st.subheader("want to know you top customers ? ")
 st.write("who many customers you want to see ? ")
 x=st.text_input('eg:- 10,20,5...')
 if x is not None:
-  st.write(df.nlargest('bill_amount',x))
+  st.write(df.nlargest(x,"bill_amount"))
