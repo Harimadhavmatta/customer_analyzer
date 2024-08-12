@@ -15,4 +15,5 @@ with st.expander("**Top List**"):
   st.write("Who many top customers you want to see ? ")
   x=st.text_input('eg:- 10,20,5...')
   s=df.sort_values("bill_amount", ascending=False)
+  st.write(s)
   
