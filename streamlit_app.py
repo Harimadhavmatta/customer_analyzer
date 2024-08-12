@@ -11,10 +11,15 @@ with st.expander("**Describe**"):
   st.write(df.describe())
 
 st.subheader("Want to know you top customers ? ")
-with st.expander("**Top List**"):
+with st.expander("**Top Customer List**"):
   st.write("Who many top customers you want to see ? ")
   x=st.text_input('eg:- 10,20,5...')
-  # x=int(x)
+  x=int(x)
   s=df.sort_values("bill_amount", ascending=False)
   st.write(s.head(x))
   
+st.subheader("Want to know which item performed well ? ")
+with st.expander("**Top Item List**"):
+  st.write(" Here are the sales of each item in order ")
+  s=df.groupby(['item_category']).mean().sort_values(["bill_amount"],ascending=False)
+  st.write(s)
