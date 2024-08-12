@@ -39,3 +39,6 @@ with st.expander("**Top Item List**"):
     grouped=df.groupby(['item_category'])['bill_amount'].mean()
     grouped=grouped.sort_values( ascending=False)
     st.write(grouped)
+st.subheader('Data Visualization')
+with st.expander(" purchases based on genger "):
+    st.bar_chart(df, x="gender", y="item_category", color="site", horizontal=True)
