@@ -11,4 +11,4 @@ with st.expander("**Info**"):
   st.write(df.info())
 with st.expander("**Describe**"):
   st.write(" This Describe display's the aggregates of each numeric column ")
-  st.write(df.info())
+  st.write(df.describe())
