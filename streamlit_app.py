@@ -1,5 +1,5 @@
 import streamlit as st
 
-st.title('🎈 App Name')
-
+st.title(' 🎂 Bakery Customer Analysis')
+st.info(" Analyzer that shows what's happening in bakery ")
 st.write('Hello world!')
